@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Residencial La Esperanza — San Miguel Pochuta</title>
+<meta name="description" content="Residencial La Esperanza, San Miguel Pochuta, Chimaltenango. Conoce las opiniones de nuestras familias y comparte la tuya.">
+<link rel="icon" type="image/jpeg" href="img/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --verde-bosque:#1F3A2E;
+    --verde-musgo:#4A6B4F;
+    --terracota:#B5563B;
+    --terracota-oscuro:#8F4230;
+    --crema-piedra:#F1EAD9;
+    --crema-piedra-2:#E8DFC9;
+    --dorado-tierra:#C9974A;
+    --tinta-cafe:#2A211B;
+    --blanco-neblina:#FBF8F1;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Work Sans', sans-serif;
+    background:var(--crema-piedra);
+    color:var(--tinta-cafe);
+    line-height:1.6;
+  }
+
+  h1,h2,h3,.brand{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+
+  a{color:inherit;}
+
+  .wrap{
+    max-width:960px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:20;
+    background:rgba(31,58,46,0.96);
+    backdrop-filter:blur(6px);
+    color:var(--blanco-neblina);
+  }
+  header.nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .brand{font-size:20px; color:var(--blanco-neblina); display:flex; align-items:center; gap:10px;}
+  .logo-nav{
+    width:40px; height:40px; border-radius:50%; object-fit:cover;
+    flex-shrink:0; box-shadow:0 0 0 1.5px rgba(251,248,241,0.35);
+  }
+  nav.links{display:flex; gap:28px; font-size:15px; font-weight:500;}
+  nav.links a{text-decoration:none; opacity:0.85; transition:opacity .2s;}
+  nav.links a:hover{opacity:1;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(180deg, var(--verde-bosque) 0%, #24463680 100%), var(--verde-bosque);
+    color:var(--blanco-neblina);
+    overflow:hidden;
+    padding:72px 0 0;
+  }
+  .hero .wrap{position:relative; z-index:2; text-align:left;}
+  .eyebrow{
+    font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--dorado-tierra); font-weight:600; margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(34px, 5.5vw, 56px);
+    line-height:1.08;
+    max-width:11.5em;
+    margin-bottom:22px;
+  }
+  .hero p.lead{
+    font-size:18px; max-width:34em; color:#E7E0D0; margin-bottom:34px;
+  }
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:56px;}
+  .btn{
+    display:inline-block; padding:14px 26px; border-radius:3px;
+    font-weight:600; font-size:15px; text-decoration:none;
+    border:1.5px solid transparent; cursor:pointer;
+    transition:transform .15s ease, background .2s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--terracota); color:var(--blanco-neblina);}
+  .btn-primary:hover{background:var(--terracota-oscuro);}
+  .btn-ghost{background:transparent; color:var(--blanco-neblina); border-color:rgba(251,248,241,0.4);}
+  .btn-ghost:hover{border-color:rgba(251,248,241,0.9);}
+
+  /* hill divider - signature element */
+  .hills{display:block; width:100%; height:auto; position:relative; z-index:1; margin-top:20px;}
+
+  /* ---------- CONFIANZA STRIP ---------- */
+  .confianza{
+    background:var(--blanco-neblina);
+    border-bottom:1px solid var(--crema-piedra-2);
+  }
+  .confianza .wrap{
+    display:flex; flex-wrap:wrap; gap:36px; justify-content:space-between;
+    padding:34px 24px;
+  }
+  .stat{min-width:140px;}
+  .stat .num{font-family:'Fraunces', serif; font-size:34px; color:var(--verde-bosque); font-weight:600;}
+  .stat .label{font-size:13.5px; color:var(--verde-musgo); font-weight:500;}
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:76px 0;}
+  .section-head{max-width:38em; margin-bottom:44px;}
+  .section-head .eyebrow{color:var(--terracota);}
+  .section-head h2{font-size:clamp(26px,3.4vw,36px); color:var(--verde-bosque); margin-bottom:14px;}
+  .section-head p{color:#5a5148; font-size:16.5px;}
+
+  /* ---------- SOBRE ---------- */
+  .sobre .grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  .sobre .card{
+    background:var(--blanco-neblina); border:1px solid var(--crema-piedra-2);
+    border-radius:4px; padding:26px 24px;
+  }
+  .sobre .card h3{font-size:18px; color:var(--verde-bosque); margin-bottom:8px;}
+  .sobre .card p{font-size:15px; color:#5a5148;}
+
+  /* ---------- OPINIONES LIST ---------- */
+  .opiniones{background:var(--blanco-neblina);}
+  #lista-opiniones{display:grid; grid-template-columns:repeat(auto-fill, minmax(270px,1fr)); gap:20px;}
+  .opinion-card{
+    background:var(--crema-piedra); border:1px solid var(--crema-piedra-2);
+    border-radius:4px; padding:22px; position:relative;
+  }
+  .opinion-card .stars{color:var(--dorado-tierra); font-size:15px; margin-bottom:10px; letter-spacing:2px;}
+  .opinion-card p.texto{font-size:15px; color:var(--tinta-cafe); margin-bottom:14px;}
+  .opinion-card .quien{font-size:13px; font-weight:600; color:var(--verde-musgo);}
+  .opinion-card .fecha{font-size:12px; color:#8a8074;}
+  .estado-msg{font-size:14.5px; color:#5a5148; padding:18px 0;}
+
+  /* ---------- FORM ---------- */
+  .formulario{background:var(--verde-bosque); color:var(--blanco-neblina);}
+  .formulario .section-head p{color:#cfd9cf;}
+  .formulario .section-head .eyebrow{color:var(--dorado-tierra);}
+  form{max-width:560px; display:grid; gap:18px;}
+  .campo{display:grid; gap:6px;}
+  label{font-size:13.5px; font-weight:600; letter-spacing:0.02em; color:#dfe6df;}
+  input[type=text], textarea{
+    font-family:'Work Sans', sans-serif; font-size:15px;
+    padding:12px 14px; border-radius:3px; border:1.5px solid #3e5b48;
+    background:#254331; color:var(--blanco-neblina); resize:vertical;
+  }
+  input[type=text]::placeholder, textarea::placeholder{color:#8ea590;}
+  input:focus, textarea:focus, .rating input:focus-visible + label{
+    outline:2px solid var(--dorado-tierra); outline-offset:2px;
+  }
+  .rating{display:flex; flex-direction:row-reverse; justify-content:flex-end; gap:6px;}
+  .rating input{position:absolute; opacity:0; width:0; height:0;}
+  .rating label{
+    font-size:28px; cursor:pointer; color:#3e5b48; transition:color .15s;
+  }
+  .rating input:checked ~ label,
+  .rating label:hover, .rating label:hover ~ label{color:var(--dorado-tierra);}
+  .form-note{font-size:13px; color:#a9b8a9;}
+  .form-status{font-size:14.5px; min-height:20px; margin-top:2px;}
+  .form-status.ok{color:var(--dorado-tierra);}
+  .form-status.error{color:#e2a091;}
+
+  /* ---------- QR ---------- */
+  .compartir{background:var(--crema-piedra);}
+  .compartir .grid{display:grid; grid-template-columns:auto 1fr; gap:36px; align-items:center;}
+  .qr-box{
+    background:var(--blanco-neblina); border:1px solid var(--crema-piedra-2);
+    border-radius:6px; padding:20px; display:inline-flex;
+  }
+  #qrcode{line-height:0;}
+  .compartir .texto h3{font-size:19px; color:var(--verde-bosque); margin-bottom:8px;}
+  .compartir .texto p{font-size:15px; color:#5a5148; margin-bottom:14px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--tinta-cafe); color:#cfc6b8; padding:36px 0;}
+  footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13.5px;}
+
+  @media (max-width:720px){
+    nav.links{display:none;}
+    .sobre .grid{grid-template-columns:1fr;}
+    .compartir .grid{grid-template-columns:1fr; text-align:center;}
+    .compartir .grid .qr-box{justify-self:center; margin:0 auto;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .btn{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <img src="img/logo.jpg" alt="Residencial La Esperanza" class="logo-nav">
+      La Esperanza
+    </div>
+    <nav class="links">
+      <a href="#opiniones">Opiniones</a>
+      <a href="#dejar-opinion">Dejar mi opinión</a>
+      <a href="#compartir">Código QR</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">San Miguel Pochuta, Chimaltenango</p>
+    <h1>Un lugar para construir tu hogar, entre las montañas de Pochuta.</h1>
+    <p class="lead">Residencial La Esperanza es la nueva opción de vivienda para tu familia. Antes de decidir, lee lo que dicen las familias que ya conocen el proyecto — y si tú también lo conoces, cuéntanos tu experiencia.</p>
+    <div class="hero-ctas">
+      <a href="#opiniones" class="btn btn-primary">Ver opiniones</a>
+      <a href="#dejar-opinion" class="btn btn-ghost">Dejar mi opinión</a>
+    </div>
+  </div>
+  <svg class="hills" viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,80 C150,20 300,100 450,55 C600,15 750,90 900,50 C1020,20 1120,70 1200,45 L1200,120 L0,120 Z" fill="#4A6B4F" opacity="0.55"/>
+    <path d="M0,95 C180,55 320,110 480,80 C650,48 800,105 980,70 C1080,52 1150,85 1200,72 L1200,120 L0,120 Z" fill="#F1EAD9"/>
+  </svg>
+</section>
+
+<div class="confianza">
+  <div class="wrap">
+    <div class="stat"><div class="num">100%</div><div class="label">Opiniones reales verificadas</div></div>
+    <div class="stat"><div class="num">San Miguel Pochuta</div><div class="label">Chimaltenango, Guatemala</div></div>
+    <div class="stat"><div class="num">Abierto</div><div class="label">A sugerencias y quejas también</div></div>
+  </div>
+</div>
+
+<section class="sobre">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Sobre el residencial</p>
+      <h2>Confianza que se construye con la voz de la comunidad</h2>
+      <p>Sabemos que decidir dónde vivir es una de las decisiones más importantes para tu familia. Por eso abrimos este espacio: para que veas de primera mano lo que opinan quienes ya conocen La Esperanza.</p>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h3>Opiniones reales</h3>
+        <p>Cada comentario que ves aquí fue revisado antes de publicarse, para que la información sea confiable y útil para ti.</p>
+      </div>
+      <div class="card">
+        <h3>Tu voz también cuenta</h3>
+        <p>¿Ya conoces el proyecto? Comparte tu experiencia, tus sugerencias o tus quejas. Nos ayuda a mejorar y ayuda a otras familias a decidir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="hills" viewBox="0 0 1200 60" preserveAspectRatio="none" style="background:var(--crema-piedra);">
+  <path d="M0,45 C200,10 400,55 600,25 C800,0 1000,50 1200,20 L1200,60 L0,60 Z" fill="#FBF8F1"/>
+</svg>
+
+<section class="opiniones" id="opiniones">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Lo que dicen las familias</p>
+      <h2>Opiniones de nuestra comunidad</h2>
+      <p>Estas son las opiniones que ya fueron revisadas y aprobadas.</p>
+    </div>
+    <div id="lista-opiniones">
+      <p class="estado-msg">Cargando opiniones…</p>
+    </div>
+  </div>
+</section>
+
+<svg class="hills" viewBox="0 0 1200 60" preserveAspectRatio="none" style="background:var(--blanco-neblina); transform:scaleY(-1);">
+  <path d="M0,45 C200,10 400,55 600,25 C800,0 1000,50 1200,20 L1200,60 L0,60 Z" fill="#1F3A2E"/>
+</svg>
+
+<section class="formulario" id="dejar-opinion">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Tu experiencia importa</p>
+      <h2>Deja tu opinión, sugerencia o queja</h2>
+      <p>Tu comentario será revisado antes de publicarse. Esto puede tomar un poco de tiempo, gracias por tu paciencia.</p>
+    </div>
+    <form id="form-opinion">
+      <div class="campo">
+        <label for="nombre">Tu nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej. María López" required maxlength="60">
+      </div>
+      <div class="campo">
+        <label>Calificación</label>
+        <div class="rating">
+          <input type="radio" id="r5" name="calificacion" value="5"><label for="r5">★</label>
+          <input type="radio" id="r4" name="calificacion" value="4"><label for="r4">★</label>
+          <input type="radio" id="r3" name="calificacion" value="3" checked><label for="r3">★</label>
+          <input type="radio" id="r2" name="calificacion" value="2"><label for="r2">★</label>
+          <input type="radio" id="r1" name="calificacion" value="1"><label for="r1">★</label>
+        </div>
+      </div>
+      <div class="campo">
+        <label for="opinion">Tu opinión, sugerencia o queja</label>
+        <textarea id="opinion" name="opinion" rows="5" placeholder="Cuéntanos tu experiencia con Residencial La Esperanza…" required maxlength="600"></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary" id="btn-enviar">Enviar opinión</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </div>
+      <p class="form-note">Al enviar, tu opinión pasa a revisión antes de aparecer en el sitio.</p>
+    </form>
+  </div>
+</section>
+
+<section class="compartir" id="compartir">
+  <div class="wrap">
+    <div class="grid">
+      <div class="qr-box"><div id="qrcode"></div></div>
+      <div class="texto">
+        <h3>Escanea y comparte</h3>
+        <p>Este código QR lleva directamente a esta página. Colócalo en volantes, rótulos o publicidad de Residencial La Esperanza para que cualquier persona pueda leer y dejar opiniones al instante.</p>
+        <a href="#dejar-opinion" class="btn btn-ghost" style="border-color:var(--verde-bosque); color:var(--verde-bosque);">Dejar mi opinión</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Residencial La Esperanza · San Miguel Pochuta, Chimaltenango</span>
+    <span>Sitio de opiniones de la comunidad</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* =========================================================
+   CONFIGURACIÓN — reemplaza esta URL con la de tu Apps Script
+   (ver README.md, paso 3: "Implementar como aplicación web")
+   ========================================================= */
+const APPS_SCRIPT_URL = "PEGA_AQUI_LA_URL_DE_TU_APPS_SCRIPT";
+
+/* --- Generar el código QR apuntando a esta misma página --- */
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.QRCode) {
+    new QRCode(document.getElementById("qrcode"), {
+      text: window.location.href.split('#')[0],
+      width: 160,
+      height: 160,
+      colorDark: "#1F3A2E",
+      colorLight: "#FBF8F1"
+    });
+  }
+  cargarOpiniones();
+});
+
+/* --- Cargar opiniones aprobadas desde Google Sheets --- */
+async function cargarOpiniones() {
+  const contenedor = document.getElementById("lista-opiniones");
+  if (APPS_SCRIPT_URL.includes("PEGA_AQUI")) {
+    contenedor.innerHTML = '<p class="estado-msg">Aún no se ha conectado la fuente de opiniones. Sigue el README para configurarla.</p>';
+    return;
+  }
+  try {
+    const res = await fetch(APPS_SCRIPT_URL, { method: "GET" });
+    const datos = await res.json();
+    if (!Array.isArray(datos) || datos.length === 0) {
+      contenedor.innerHTML = '<p class="estado-msg">Todavía no hay opiniones publicadas. ¡Sé la primera persona en dejar la tuya!</p>';
+      return;
+    }
+    contenedor.innerHTML = datos.map(renderOpinion).join("");
+  } catch (err) {
+    contenedor.innerHTML = '<p class="estado-msg">No se pudieron cargar las opiniones en este momento.</p>';
+    console.error(err);
+  }
+}
+
+function renderOpinion(o) {
+  const estrellas = "★".repeat(Number(o.calificacion) || 0) + "☆".repeat(5 - (Number(o.calificacion) || 0));
+  const fecha = o.fecha ? new Date(o.fecha).toLocaleDateString("es-GT", { year:'numeric', month:'long', day:'numeric' }) : "";
+  return `
+    <div class="opinion-card">
+      <div class="stars">${estrellas}</div>
+      <p class="texto">${escaparHTML(o.opinion || "")}</p>
+      <div class="quien">${escaparHTML(o.nombre || "Vecino/a")}</div>
+      <div class="fecha">${fecha}</div>
+    </div>`;
+}
+
+function escaparHTML(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+/* --- Enviar una opinión nueva --- */
+document.getElementById("form-opinion").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const boton = document.getElementById("btn-enviar");
+  const estado = document.getElementById("form-status");
+
+  if (APPS_SCRIPT_URL.includes("PEGA_AQUI")) {
+    estado.textContent = "El formulario aún no está conectado. Revisa el README.";
+    estado.className = "form-status error";
+    return;
+  }
+
+  const datos = {
+    nombre: document.getElementById("nombre").value.trim(),
+    calificacion: document.querySelector('input[name="calificacion"]:checked').value,
+    opinion: document.getElementById("opinion").value.trim()
+  };
+
+  boton.disabled = true;
+  boton.textContent = "Enviando…";
+  estado.textContent = "";
+
+  try {
+    // Content-Type text/plain evita que el navegador bloquee la solicitud (CORS)
+    await fetch(APPS_SCRIPT_URL, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(datos)
+    });
+    estado.textContent = "¡Gracias! Tu opinión fue enviada y está en revisión.";
+    estado.className = "form-status ok";
+    e.target.reset();
+    document.getElementById("r3").checked = true;
+  } catch (err) {
+    estado.textContent = "Hubo un problema al enviar tu opinión. Intenta de nuevo.";
+    estado.className = "form-status error";
+    console.error(err);
+  } finally {
+    boton.disabled = false;
+    boton.textContent = "Enviar opinión";
+  }
+});
+</script>
+</body>
+</html>
