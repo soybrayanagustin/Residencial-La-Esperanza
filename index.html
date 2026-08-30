@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* --- Cargar opiniones aprobadas desde Google Sheets --- */
 async function cargarOpiniones() {
   const contenedor = document.getElementById("lista-opiniones");
-  if (APPS_SCRIPT_URL.includes("https://script.google.com/macros/s/AKfycbxKsp-QAKnQ6USXNKmUKmz2s2Z4Ge9aZ2GzLYd5ISLqKR4xo95Hh-tt3wKcdv79iAsrgg/exec")) {
+  if (APPS_SCRIPT_URL.includes("PEGA_AQUI")) {
     contenedor.innerHTML = '<p class="estado-msg">Aún no se ha conectado la fuente de opiniones. Sigue el README para configurarla.</p>';
     return;
   }
@@ -406,7 +406,7 @@ document.getElementById("form-opinion").addEventListener("submit", async (e) => 
   const boton = document.getElementById("btn-enviar");
   const estado = document.getElementById("form-status");
 
-  if (APPS_SCRIPT_URL.includes("https://script.google.com/macros/s/AKfycbxKsp-QAKnQ6USXNKmUKmz2s2Z4Ge9aZ2GzLYd5ISLqKR4xo95Hh-tt3wKcdv79iAsrgg/exec")) {
+  if (APPS_SCRIPT_URL.includes("PEGA_AQUI")) {
     estado.textContent = "El formulario aún no está conectado. Revisa el README.";
     estado.className = "form-status error";
     return;
