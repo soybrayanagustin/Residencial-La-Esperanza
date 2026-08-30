@@ -406,7 +406,7 @@ document.getElementById("form-opinion").addEventListener("submit", async (e) => 
   const boton = document.getElementById("btn-enviar");
   const estado = document.getElementById("form-status");
 
-  if (APPS_SCRIPT_URL.includes("PEGA_AQUI")) {
+  if (APPS_SCRIPT_URL.includes("https://script.google.com/macros/s/AKfycbwVVLRY7h164geFFMh_J8REvVfPcCF0fGWwklBRfE7QIauxQKXOtW5V5DPzZ5RxOHKzXQ/exec")) {
     estado.textContent = "El formulario aún no está conectado. Revisa el README.";
     estado.className = "form-status error";
     return;
